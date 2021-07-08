@@ -1,17 +1,15 @@
-# Graylog take home challenge
 
 ## Goals
     Creating an hosting Grafana in AWS behind a network load balancer. 
 
 ## Layout
-    layout.png contains a very highover view of the layout.
+
 
 ## Future improvments/security concerns
     1. Grafana should be configured to utilize an external database (cluster) to make the most out of load balancing. 
 
     2. Load balancer needs to be setup as an application balancer. Will need to obtain a domain and a certificate for this. This will allow TLS connections. TLS allows the connection between the client and the load balancer to be encrypted. 
 
-    3. If SSH will be needed in the future we will need to configure the Terraform file to utilize user certificates.
     
     4. Do not allow direct access to port 3000 without going through the load balancer. 
 
