@@ -1,3 +1,5 @@
+#Terraform
+
 # Local .terraform directories
 **/.terraform/*
 
@@ -33,4 +35,14 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-*.lock.hcl
+#vscode
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
