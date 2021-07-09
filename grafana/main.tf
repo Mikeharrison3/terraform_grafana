@@ -18,12 +18,14 @@ data "aws_availability_zones" "available" {
 module "vpc" {
     source = "./modules/vpc"
 
-#    cidr_block = var.vpc_cidr_block
- availability_zone = data.aws_availability_zones.available.names[0]
+    availability_zone = data.aws_availability_zones.available.names[0]
 }
 
 module "instances" {
     source = "./modules/aws_instance"
+
+    #Todo In a real world use case we would possibly use a foreach to create multiple instances and each instance would connect to an external database. With the load balancer switching between each.
+
     availability_zone = data.aws_availability_zones.available.names[0]
     grafana_interface = module.vpc.grafana_interface
     grafana_subnet = module.vpc.grafana_subnet
